@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - fix/micronaut-4.6.3
 
 jobs:
   build:
