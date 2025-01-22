@@ -3,7 +3,8 @@ name: build
 on:
   push:
     branches:
-      - main
+    - main
+    - fix/micronaut-4.6.3
 
 jobs:
   build:
