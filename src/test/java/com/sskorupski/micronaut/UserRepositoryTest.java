@@ -8,19 +8,19 @@ import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest(transactional = false)
-public class OrderRepositoryTest {
+public class UserRepositoryTest {
 
     @Inject
-    OrderRepository orderRepository;
+    UserRepository userRepository;
 
    @Test
     void findAll_withPageableSort_andSearch() {
         // GIVEN 
        Sort.Order.Direction sortDirection = Sort.Order.Direction.ASC;
         Pageable pageable = Pageable.UNPAGED.order(new Sort.Order("embedded.someProp", sortDirection, false));
-        PredicateSpecification<Order> predicate = null;
+        PredicateSpecification<User> predicate = null;
         // WHEN
-        orderRepository.findAll(predicate, pageable);
+        userRepository.findAll(predicate, pageable);
        // THEN no exception is thrown
     }
 }

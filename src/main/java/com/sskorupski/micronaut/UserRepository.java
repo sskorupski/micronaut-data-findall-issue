@@ -13,11 +13,11 @@ import io.micronaut.data.repository.jpa.criteria.PredicateSpecification;
 import java.util.UUID;
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-public interface OrderRepository extends CrudRepository<Order, UUID> {
+public interface UserRepository extends CrudRepository<User, UUID> {
     @NonNull
     @JoinSpecifications({
         @Join(value = "embedded", type = Join.Type.LEFT_FETCH)
     })
-    Page<Order> findAll(PredicateSpecification<Order> spec, Pageable pageable);
+    Page<User> findAll(PredicateSpecification<User> spec, Pageable pageable);
 
 }

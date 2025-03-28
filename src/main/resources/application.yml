@@ -1,5 +1,17 @@
 #Wed Jan 22 01:35:09 UTC 2025
-micronaut.application.name: micronaut-data-findall-issue
+micronaut:
+  application.name: micronaut-issues
+  caches:
+    users:
+      maximum-size: 100
+
+endpoints:
+  caches:
+    enabled: true
+
+logger:
+  levels:
+    io.micronaut.cache: TRACE
 
 datasources:
   default:
